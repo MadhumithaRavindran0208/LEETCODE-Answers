@@ -1,0 +1,18 @@
+name: My Scheduled Task
+
+on:
+  schedule:
+    # This line tells GitHub WHEN to run. 
+    # '0 0 * * *' means "Every day at midnight UTC"
+    - cron: '0 0 * * *'
+  workflow_dispatch: # This lets you run it manually for testing
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run a simple message
+        run: echo "The scheduled task is running!"
