@@ -1,7 +1,13 @@
 class Solution(object):
     def isPerfectSquare(self, num):
-        if num**0.5==round(num**0.5):
-            return(bool(1))
-        else:
-            return(bool(0))
-        
+        low = 1
+        high = num
+        while low <= high:
+            mid = (low + high) // 2
+            if mid * mid == num:
+                return True
+            elif mid * mid < num:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return False
