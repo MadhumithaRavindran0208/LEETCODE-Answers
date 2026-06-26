@@ -1,8 +1,7 @@
 class Solution(object):
     def reverse(self, x):
-        num=str(x)
+        num=str(abs(x))
         if x<0:
-            num=str(abs(x))
             a=int(num[::-1])*-1
         elif x>0:
             a=(int(num[::-1]))
