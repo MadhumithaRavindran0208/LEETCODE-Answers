@@ -8,4 +8,14 @@ class Solution(object):
             seen.add(current)
             current = current.next
         return False
-        
+class Solution(object):
+    def hasCycle(self, head):
+        l=[-1]
+        slow=head
+        fast=head
+        while fast and fast.next:
+            slow=slow.next          
+            fast=fast.next.next     
+            if slow==fast:         
+                return True 
+        return False     
